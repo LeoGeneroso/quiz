@@ -1,2 +1,2 @@
-# quiz
+# Quiz
 Quiz project using React
