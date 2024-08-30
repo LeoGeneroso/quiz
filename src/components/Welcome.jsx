@@ -8,7 +8,6 @@ import './Welcome.css'
 const Welcome = () => {
     const [quizState, dispatch] = useContext(QuizContext);
 
-    console.log(quizState);
     return (
         <div id="welcome">
             <h2>Welcome</h2>
