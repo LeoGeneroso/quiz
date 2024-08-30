@@ -1,0 +1,20 @@
+#endgame {
+    text-align: center;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+#endgame h2,
+#endgame p {
+    margin-bottom: 1rem;
+}
+
+#endgame p {
+    color: #8435de;
+}
+
+#endgame img {
+    margin: 2rem;
+    height: 200px;
+}

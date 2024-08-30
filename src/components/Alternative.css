@@ -1,0 +1,38 @@
+.alternative {
+    background-color: #3c0e70;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.4s;
+}
+
+.alternative:hover {
+    opacity: 1;
+}
+
+#alternatives-container .alternative p {
+    margin-bottom: 0;
+}
+
+.correctSelected {
+    background-color: #0bfc03;
+    font-weight: bold;
+}
+
+.correctUnselected {
+    background-color: #0bfc03;
+    font-weight: bold;
+    opacity: 0.4;
+}
+
+.wrong {
+    background-color: #fc0303;
+    font-weight: bold;
+}
+
+.others {
+    background-color: #3c0e70;
+    opacity: 0.4;
+}
