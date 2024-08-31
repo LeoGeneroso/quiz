@@ -9,6 +9,8 @@ const initalState = {
     currentQuestion: 0,
     score: 0,
     answerSelected: null,
+    help: false,
+    alternativeToHide: null,
 }
 
 const quizReducer = (state, action) => {
@@ -45,13 +47,14 @@ const quizReducer = (state, action) => {
 
         case "CHANGE_QUESTION":
             const nextQuestion = state.currentQuestion + 1;
-            const endGame = nextQuestion >= questions.length;
+            const endGame = nextQuestion >= state.questions.length;
 
             return {
                 ...state,
                 currentQuestion: nextQuestion,
                 gameStage: endGame ? STAGES[3] : state.gameStage,
                 answerSelected: null,
+                help: false,
             }
 
         case "NEW_GAME":
@@ -70,6 +73,25 @@ const quizReducer = (state, action) => {
                 ...state,
                 score: state.score + score,
                 answerSelected: action.payload.alternative,
+            }
+
+        case "SHOW_TIP":
+            return {
+                ...state,
+                help: "hint",
+            }
+
+        case "REMOVE_ALTERNATIVE":
+            const currQuestion = state.questions[state.currentQuestion];
+
+            for (let i in currQuestion.alternatives) {
+                if (currQuestion.alternatives[i] !== currQuestion.answer) {
+                    return {
+                        ...state,
+                        alternativeToHide: currQuestion.alternatives[i],
+                        help: true,
+                    }
+                }
             }
 
         default:

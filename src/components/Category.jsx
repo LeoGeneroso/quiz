@@ -7,7 +7,6 @@ const Category = () => {
     const [quizState, dispatch] = useContext(QuizContext);
 
     const chooseCategory = (category) => {
-        debugger;
         dispatch({ type: "PICK_CATEGORY", payload: category });
         dispatch({ type: "REORDER_QUESTIONS" });
     }
